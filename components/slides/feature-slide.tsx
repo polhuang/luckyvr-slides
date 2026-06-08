@@ -1,7 +1,6 @@
 import {
   Shield,
   Users,
-  DollarSign,
   Server,
   HeadphonesIcon,
   type LucideIcon,
@@ -23,46 +22,26 @@ interface Feature {
 const features: Feature[] = [
   {
     icon: Shield,
-    title: "Security & Compliance",
+    title: "Security, Identity & Compliance",
     pro: {
       bullets: [
-        "Up to 40 custom WAF rules, 100 IP blocks",
-        "No OWASP managed rulesets",
-        "No audit logs or SIEM integration",
-        "HIPAA BAA as add-on ($350/mo)",
-        "No project-level RBAC",
+        "SAML SSO as add-on (+$300/mo)",
+        "SCIM Directory Sync as add-on (+$150/mo, requires SSO)",
+        "HIPAA BAA as add-on (+$350/mo)",
+        "WAF: up to 40 custom rules, 100 IP blocks; basic DDoS",
+        "No audit logs, SIEM, or project-level RBAC",
       ],
-      costNote: "+$350/mo if HIPAA needed",
+      costNote: "+$800/mo for SSO + SCIM + HIPAA",
     },
     enterprise: {
       bullets: [
-        "1,000 custom WAF rules, 1,000 IP blocks",
-        "OWASP Core Ruleset (managed, auto-updated)",
-        "Full audit logs with SIEM export",
-        "HIPAA BAA included",
-        "Project-level RBAC with guest controls",
+        "SAML SSO + SCIM Directory Sync included",
+        "HIPAA BAA, SOC 2, ISO 27001, PCI DSS v4.0",
+        "Managed WAF: up to 1,000 rules & IP blocks, dedicated DDoS",
+        "Audit logs (90-day) with SIEM streaming to Datadog/Splunk/S3",
+        "Granular RBAC: Security role, access groups & extended permissions",
       ],
-      costNote: "All included",
-    },
-  },
-  {
-    icon: DollarSign,
-    title: "Pro Add-Ons vs. Enterprise",
-    pro: {
-      bullets: [
-        "Base: $20/user/mo (4 seats = $960/yr)",
-        "SAML SSO: +$300/mo ($3,600/yr)",
-        "HIPAA BAA: +$350/mo ($4,200/yr)",
-        "Web Analytics Plus: +$10/mo ($120/yr)",
-        "Speed Insights: +$10/mo per project",
-      ],
-    },
-    enterprise: {
-      bullets: [
-        "SSO, HIPAA, analytics all included",
-        "Dedicated infrastructure",
-        "Predictable annual cost: $19,800-$21,000/yr",
-      ],
+      costNote: "Included",
     },
   },
   {
@@ -71,17 +50,18 @@ const features: Feature[] = [
     pro: {
       bullets: [
         "No uptime SLA",
-        "Single-region compute",
-        "No automatic failover",
+        "Single-region compute, no automatic failover",
+        "Shared build infrastructure",
         "Up to 25 system bypass rules",
       ],
     },
     enterprise: {
       bullets: [
-        "99.99% uptime SLA (under 53 minutes downtime/yr)",
+        "Contractual 99.99% uptime SLA (under 53 min downtime/yr)",
         "Multi-region compute with automatic failover",
-        "Up to 100 system bypass rules",
-        "Custom infrastructure limits",
+        "Dedicated, isolated build infrastructure",
+        "Secure Compute: VPC peering & VPN (PrivateLink + Static IPs rolling out)",
+        "Custom resource limits, up to 100 bypass rules",
       ],
     },
   },
@@ -90,20 +70,18 @@ const features: Feature[] = [
     title: "Team Management at Scale",
     pro: {
       bullets: [
-        "Unlimited free viewer seats",
-        "Deploying members at $20/mo each",
-        "No SCIM or directory sync",
-        "No project-level RBAC",
-        "SSO requires $300/mo add-on",
+        "Unlimited free viewer seats; $20/mo per deploying member",
+        "Team & project roles only",
+        "Advanced Deployment Protection add-on (+$150/mo)",
+        "No Code Owners or Conformance",
       ],
     },
     enterprise: {
       bullets: [
-        "SCIM & Directory Sync (auto-provision from IdP)",
-        "Project-level role-based access control",
-        "Guest and team access controls",
-        "SAML SSO included",
-        "Automated user lifecycle management",
+        "Auto-provision & deprovision users from your IdP",
+        "Code Owners for directory & file ownership",
+        "Conformance for org-wide code standards",
+        "Guest & team access controls included",
       ],
     },
   },
@@ -115,15 +93,15 @@ const features: Feature[] = [
         "Community and documentation support",
         "No guaranteed response time",
         "No dedicated point of contact",
-        "No SLA",
+        "No contractual SLA",
       ],
     },
     enterprise: {
       bullets: [
         "Support with contractual SLA",
-        "Dedicated Customer Success Manager",
-        "Priority incident routing",
-        "99.99% uptime SLA with enforcement",
+        "Dedicated Customer Success Manager & account team",
+        "Priority incident routing & dedicated DDoS response",
+        "Custom contracts & guided onboarding",
       ],
     },
   },
